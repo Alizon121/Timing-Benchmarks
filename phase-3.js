@@ -1,19 +1,39 @@
 const [addNums, addManyNums] = require("./phase-1");
 
 function addNums10Timing(increment) {
-  // Copy your `addNums10` code here
-  // Then, add timing code
+  let arr =[]
+for (let i = increment; i <= increment * 10; i += increment) {
 
-  // Your code here 
+  let startTime = Date.now()
+  // console.time()
+  arr.push(addNums(i))
+  // console.timeEnd()
+  let endTime = Date.now()
+
+  console.log(`${endTime - startTime}: ms`)
+}
+return arr;
+
+ 
 
 }
 
 
 function addManyNums10Timing(increment) {
-// Copy your `addManyNums10` code here
+  let arr = []
+  for (let i = increment; i <= increment * 10; i += increment) {
+    // console.time()
+    let startTime = Date.now()
+    arr.push(addManyNums(i))
+    let endTime = Date.now()
+    // console.timeEnd()
+
+    console.log(`${endTime - startTime}`)
+  }
+  return arr
 // Then, add timing code
 
-  // Your code here 
+//   Your code here 
 
 }
 
